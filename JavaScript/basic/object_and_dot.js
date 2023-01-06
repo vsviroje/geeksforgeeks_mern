@@ -47,3 +47,61 @@ temp4.addSalary(100);
 console.log(temp4.anual_salary);
 
 
+//Enhanced object literals
+let test="test23"
+const temp5={
+    [`test`]:"test",
+    [`${test}`]:"test",
+    age:56,
+    name:'hgf',
+    anual_salary:0,
+    display:function(){
+        return this.name+' '+this.age;
+    },
+    temp4,
+    temp6:temp4,
+};
+
+console.log(temp5);
+console.log(temp5.display());
+
+//optional chaining
+const temp6={
+    age:56,
+    name:'hgf',
+    anual_salary:0,
+    display:function(){
+        return this.name+' '+this.age;
+    },
+    temp:{
+        age:23,
+        name:'sda'
+    }
+};
+console.log(temp6);
+console.log(temp6.display?.() || "invalid method");
+console.log(temp6.display1?.() || "invalid method");
+console.log(temp6.temp?.age || "invalid element");
+console.log(temp6.temp?.number || "invalid element");
+
+//object looping
+const temp7={
+    age:56,
+    name:'hgf',
+    anual_salary:0,
+    display:function(){
+        return this.name+' '+this.age;
+    },
+    temp:{
+        age:23,
+        name:'sda'
+    }
+};
+console.log(temp7);
+console.log(Object.keys(temp7));
+console.log(Object.values(temp7));
+let temp8=Object.entries(temp7);
+console.log(temp8);
+for(let item of temp8){
+    console.log(item);
+}
